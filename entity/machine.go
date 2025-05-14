@@ -101,6 +101,7 @@ type Machine struct {
 	Netboot                      bool             `json:"netboot,omitempty"`
 	Locked                       bool             `json:"locked,omitempty"`
 	EphemeralDeploy              bool             `json:"ephemeral_deploy,omitempty"`
+	DPU                          bool             `json:"is_dpu,omitempty"`
 }
 
 func (m *Machine) UnmarshalJSON(data []byte) error {
@@ -242,6 +243,7 @@ type MachineParams struct {
 	SwapSize     int64    `url:"swap_size,omitempty"`
 	CPUCount     int      `url:"cpu_count,omitempty"`
 	Commission   bool     `url:"commission,omitempty"`
+	DPU          bool     `url:"is_dpu,omitempty"`
 }
 
 // MachineCommissionParams enumerates the parameters for the commission operation
